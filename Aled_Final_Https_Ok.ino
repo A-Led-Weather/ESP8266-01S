@@ -17,9 +17,9 @@
 #include <WiFiClientSecureBearSSL.h>
 
 Adafruit_HTU21DF htu = Adafruit_HTU21DF();
-const char* ssid = "iPhone de Léo";
-const char* password = "20102020";
-const char* server = "https://www.aled-weather.fr:8080/reports";
+const char* ssid = "your_ssid";
+const char* password = "your_wifi_password";
+const char* server = "request_url";
 
 ESP8266WiFiMulti WiFiMulti;
 
