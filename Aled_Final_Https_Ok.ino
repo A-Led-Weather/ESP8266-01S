@@ -19,7 +19,7 @@
 Adafruit_HTU21DF htu = Adafruit_HTU21DF();
 const char* ssid = "your_ssid";
 const char* password = "your_wifi_password";
-const char* server = "request_url";
+const char* server = "https://www.aled-weather.fr:8080/reports";
 
 ESP8266WiFiMulti WiFiMulti;
 
