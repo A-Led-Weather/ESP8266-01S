@@ -1,10 +1,3 @@
-/**
-   BasicHTTPSClient.ino
-
-    Created on: 20.08.2018
-
-*/
-
 #include <Arduino.h>
 #include "Adafruit_HTU21DF.h"
 #include <Wire.h>
@@ -17,6 +10,7 @@
 #include <WiFiClientSecureBearSSL.h>
 
 Adafruit_HTU21DF htu = Adafruit_HTU21DF();
+
 const char* ssid = "your_ssid";
 const char* password = "your_wifi_password";
 const char* server = "https://www.aled-weather.fr:8080/reports";
@@ -126,14 +120,12 @@ void loop() {
 
   std::unique_ptr<BearSSL::WiFiClientSecure> client(new BearSSL::WiFiClientSecure);
 
-  //client->setFingerprint(fingerprint);
-  // Or, if you happy to ignore the SSL certificate, then use the following line instead:
   client->setInsecure();
 
   HTTPClient https;
 
   Serial.print("[HTTPS] begin...\n");
-  if (https.begin(*client, server)) {  // HTTPS
+  if (https.begin(*client, server)) {
 
     Serial.print("[HTTPS] POST...\n");
     // start connection and send HTTP header
@@ -144,7 +136,6 @@ void loop() {
       // HTTP header has been send and Server response header has been handled
       Serial.printf("[HTTPS] POST... code: %d\n", httpCode);
 
-      // file found at server
       if (httpCode == HTTP_CODE_OK || httpCode == HTTP_CODE_MOVED_PERMANENTLY) {
         String payload = https.getString();
         Serial.println(payload);
