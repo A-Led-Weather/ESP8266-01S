@@ -4,9 +4,7 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266WiFiMulti.h>
 #include <ACROBOTIC_SSD1306.h>
-
 #include <ESP8266HTTPClient.h>
-
 #include <WiFiClientSecureBearSSL.h>
 
 Adafruit_HTU21DF htu = Adafruit_HTU21DF();
